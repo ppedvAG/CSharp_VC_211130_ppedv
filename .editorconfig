@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS8604: Mögliches Nullverweisargument.
+dotnet_diagnostic.CS8604.severity = silent
