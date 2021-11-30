@@ -6,38 +6,37 @@ Datum: 30.11.2021
 
 ## M00 | VORSTELLUNG
 
-- [ ] Begrüßung
-- [ ] Ablauf
-- [ ] Agenda
+- [x] Begrüßung
+- [x] Ablauf
+- [x] Agenda
 
 
 ## M01 | .NET GRUNDLAGEN
-- [ ] C#
-- [ ] .NET 5.0
-- [ ] Projekte und Projektmappen
-- [ ] HelloWorld.cs
-- [ ] Startprojekt festlegen
+- [x] C#
+- [x] .NET 5.0
+- [x] Projekte und Projektmappen
+- [x] HelloWorld.cs
 
 
 ## M02 | VARIABLEN, DATENTYPEN, KONVERTIERUNGEN und OPERATOREN
-- [ ] Sprachgundlagen 
-- [ ] Variablen & Datentypen 
-- [ ] Aus- und Eingaben
-- [ ] Parsing & Casting
-- [ ] Operatoren  
+- [x] Sprachgundlagen 
+- [x] Variablen & Datentypen 
+- [x] Aus- und Eingaben
+- [x] Parsing & Casting
+- [x] Operatoren  
  
 
 ## M03 | ARRAYS und BEDINGUNGEN
-- [ ] eindimensionale Arrays 
-- [ ] mehdimensionale Arrays 
-- [ ] logische Operatoren
-- [ ] if-Abfrage 
+- [x] eindimensionale Arrays 
+- [x] mehrdimensionale Arrays 
+- [x] logische Operatoren
+- [x] if-Abfrage 
 
 ## M04 | SCHLEIFEN und ENUMS
-- [ ] while-Schleifen
-- [ ] do-while-Schleife
-- [ ] for-Schleife  
-- [ ] foreach-Schleife  
+- [x] while-Schleifen
+- [x] do-while-Schleife
+- [x] for-Schleife  
+- [x] foreach-Schleife  
 - [ ] Enums 
 
 
