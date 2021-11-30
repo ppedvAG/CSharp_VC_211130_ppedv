@@ -85,6 +85,7 @@ namespace Array_Bedingungen
             {
                 Console.WriteLine("Gleich");
             }
+
             #endregion
 
         }
