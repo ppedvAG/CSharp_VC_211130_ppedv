@@ -1,7 +1,8 @@
 ﻿# CSharp Grundkurs
 
 Trainer: Klaas Hagge
-Darum: 30.11.2021
+
+Datum: 30.11.2021
 
 ## M00 | VORSTELLUNG
 
