@@ -25,6 +25,8 @@ namespace Fahrzeugpark
             this.Preis = preis;
             this.AktGeschwindigkeit = 0;
             this.MotorLäuft = false;
+
+            AnzahlFahrzeuge++;
         }
 
         //Methode zur Ausgabe von Objektinformationen
