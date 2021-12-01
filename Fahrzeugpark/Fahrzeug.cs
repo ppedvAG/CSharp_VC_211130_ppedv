@@ -12,8 +12,8 @@ namespace Fahrzeugpark
 
         //Properties
         public string Name { get; set; }
-        public int MaxGeschwindigkeit { get; set; }
-        public int AktGeschwindigkeit { get; set; }
+        public int MaxGeschwindigkeit { get; private set; }
+        public int AktGeschwindigkeit { get; private set; }
         public double Preis { get; set; }
         public bool MotorLäuft { get; set; }
 
@@ -76,6 +76,22 @@ namespace Fahrzeugpark
 
                 Console.WriteLine($"{this.Name} bewegt sich jetzt mit {this.AktGeschwindigkeit}km/h");
             }
+        }
+
+        #endregion
+
+        #region Lab 07: Statische Member, Destruktor
+
+        public static int AnzahlFahrzeuge { get; set; } = 0;
+
+        public static string ZeigeAnzahlFahrzeuge()
+        {
+            return $"Es wurden {AnzahlFahrzeuge} Fahrzeuge gebaut.";
+        }
+
+        ~Fahrzeug()
+        {
+            Console.WriteLine($"{this.Name} wurde gerade verschrottet.");
         }
 
         #endregion

@@ -38,6 +38,25 @@ namespace Fahrzeugpark
             Console.WriteLine(fz1.Info() + "\n");
 
             #endregion
+
+            #region Lab 07: GC und statische Member
+
+            //Generierung von div. Objekten (zur Überschwemmung des RAM)
+            fz1 = new Fahrzeug("BMW", 230, 25999.99);
+            for (int i = 0; i < 1000; i++)
+            {
+                fz1 = new Fahrzeug("BMW", 230, 25999.99);
+            }
+
+            //Bsp-Aufruf der GarbageCollection
+            GC.Collect();
+            //Abwarten der Finalizer-Ausführungen (der Objekte)
+            GC.WaitForPendingFinalizers();
+
+            //Aufruf der statischen Methode
+            Console.WriteLine(Fahrzeug.ZeigeAnzahlFahrzeuge());
+
+            #endregion
         }
     }
 }

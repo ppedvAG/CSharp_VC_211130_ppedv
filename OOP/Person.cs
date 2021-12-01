@@ -48,6 +48,8 @@ namespace OOP
             this.Vorname = vorname;
             this.Nachname = nachname;
             this.Geburtsdatum = geburtsdatum;
+
+            AnzahlPersonen++;
         }
 
         //Es können mehrere Konstruktoren definiert werden, welche unterschiedliche Übergabeparameter haben (Überladung). Ein Konstruktor, der keine
@@ -68,5 +70,30 @@ namespace OOP
 
         #endregion
 
+        #region Statische Member
+
+        //STATISCHE Variablen und Methoden hängen an der Klasse selbst und nicht an instanziierten Objekten. Sie existieren demnach unabhängig von der Anzahl
+        ///Objekte genau einmal. Der Aufruf erfolgt über den Klassenbezeichner.
+        public static int AnzahlPersonen { get; set; } = 0;
+
+        public static string ZeigeAnzahlPersonen()
+        {
+            return $"Es gibt {AnzahlPersonen} Personen.";
+        }
+
+        #endregion
+
+        #region Destruktor
+
+        //Der DESTRUKTOR wird von der GarbageCollection aufgerufen, wenn das Objekt nicht
+        //mehr referenziert ist. Hier können Aktionen definiert werden,
+        //welche zusätzlich zur 'Zerstörung' erfolgen sollen.
+        ~Person()
+        {
+            Console.WriteLine($"{this.Vorname} {this.Nachname} wurde zerstört.");
+            AnzahlPersonen--;
+        }
+
+        #endregion
     }
 }
