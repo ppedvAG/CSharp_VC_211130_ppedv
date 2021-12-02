@@ -59,7 +59,7 @@ namespace OOP
         public Arbeitnehmer(Arbeitnehmer alterArbeitnehmer)
         {
             this.Vorname = alterArbeitnehmer.Vorname;
-            this.Alter = alterArbeitnehmer.Alter;
+            this.Geburtsdatum = alterArbeitnehmer.Geburtsdatum;
             //...
         }
     }
