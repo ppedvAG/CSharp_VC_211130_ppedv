@@ -12,6 +12,8 @@ namespace OOP
         //Zusätzliche Arbeitnehmer-eigene Eigenschaften
         public string Abteilung { get; set; }
         public Person Chef { get; set; }
+
+        //Durch ILohn verlangte Eigenschaft
         public int Gehalt { get; set; } = 3500;
 
         //Arbeitnehmer-Konstruktor, welcher per BASE-Stichwort den Konstruktor der Personklasse aufruft. Dieser erstellt dann eine Person, gibt diese
@@ -35,18 +37,30 @@ namespace OOP
         {
             Console.WriteLine("Kantinenessen");
         }
-
+                
+        //Ducrh ILohn verlangte Methode
         public void Auszahlung()
         {
-            Console.WriteLine($"{this.Vorname} {this.Nachname} hat {this.Gehalt} von {this.Chef.Nachname} erhalten.");
+            Console.WriteLine($"{this.Vorname} {this.Nachname} hat {this.Gehalt}€ von {this.Chef.Vorname} {this.Chef.Nachname} bekommen.");
         }
 
+        //Durch IClonable verlangte Methode (Bsp für .NET-eigenes Interface)
+        ///Diese Methode erlaubt die Erstellung einer Kopie dieses Objekts
         public object Clone()
         {
+            //Durch .MemberwiseClone() werden alle Wertetypen des Originalobjekts kopiert
             Arbeitnehmer an = (Arbeitnehmer)this.MemberwiseClone();
+            //Referenzen müssen manuell neu zugewiesen werden oder ebenfalls über IClonable verfügen und durch .Clone() kopiert werden
             an.Chef = this.Chef;
-
             return an;
+        }
+
+        //Alternativ zu IClonable kann ein Kopierkonstruktor zur Dublizierung verwendet werden. Hier werden die Werte und Referenzen koiert und übertragen
+        public Arbeitnehmer(Arbeitnehmer alterArbeitnehmer)
+        {
+            this.Vorname = alterArbeitnehmer.Vorname;
+            this.Alter = alterArbeitnehmer.Alter;
+            //...
         }
     }
 }

@@ -72,37 +72,76 @@ namespace Fahrzeugpark
 
             #region Lab 09: Polymorphismus
 
-            //Arraydeklarierung
-            Fahrzeug[] fahrzeuge = new Fahrzeug[10];
+            ////Arraydeklarierung
+            //Fahrzeug[] fahrzeuge = new Fahrzeug[10];
 
-            //Schleife über das Array zur Befüllung
-            for (int i = 0; i < fahrzeuge.Length; i++)
-            {
-                //Aufruf der Zufallsmethode aus der Fahrzeug-Klasse
-                fahrzeuge[i] = Fahrzeug.GeneriereFahrzeug($"_{i}");
-            }
+            ////Schleife über das Array zur Befüllung
+            //for (int i = 0; i < fahrzeuge.Length; i++)
+            //{
+            //    //Aufruf der Zufallsmethode aus der Fahrzeug-Klasse
+            //    fahrzeuge[i] = Fahrzeug.GeneriereFahrzeug($"_{i}");
+            //}
 
-            //Deklarierung/Initialisierung der Zählvariablen
-            int pkws = 0, schiffe = 0, flugzeuge = 0;
+            ////Deklarierung/Initialisierung der Zählvariablen
+            //int pkws = 0, schiffe = 0, flugzeuge = 0;
 
-            //Schleife über das Array zur Identifizierung der Objekttypen
-            foreach (Fahrzeug item in fahrzeuge)
-            {
-                //Ausgabe der ToString()-Methoden
-                Console.WriteLine(item);
-                //Prüfung des Objektstyps und Hochzählen der entsprechenden Variablen
-                if (item == null) Console.WriteLine("Kein Objekt vorhanden");
-                else if (item is PKW) pkws++;
-                else if (item is Schiff) schiffe++;
-                else flugzeuge++;
-            }
+            ////Schleife über das Array zur Identifizierung der Objekttypen
+            //foreach (Fahrzeug item in fahrzeuge)
+            //{
+            //    //Ausgabe der ToString()-Methoden
+            //    Console.WriteLine(item);
+            //    //Prüfung des Objektstyps und Hochzählen der entsprechenden Variablen
+            //    if (item == null) Console.WriteLine("Kein Objekt vorhanden");
+            //    else if (item is PKW) pkws++;
+            //    else if (item is Schiff) schiffe++;
+            //    else flugzeuge++;
+            //}
 
-            //Ausgabe
-            Console.WriteLine($"Es wurden {pkws} PKW(s), {flugzeuge} Flugzeug(e) und {schiffe} Schiff(e) produziert.");
-            //Ausführung der abstrakten Methode
-            fahrzeuge[2].Hupen();
+            ////Ausgabe
+            //Console.WriteLine($"Es wurden {pkws} PKW(s), {flugzeuge} Flugzeug(e) und {schiffe} Schiff(e) produziert.");
+            ////Ausführung der abstrakten Methode
+            //fahrzeuge[2].Hupen();
 
             #endregion
+
+            #region Lab 10: Interfaces
+
+            //Instanziierung von Bsp-Objekten
+            PKW pkw1 = new PKW("BMW", 250, 23000, 5);
+            Flugzeug flugzeug1 = new Flugzeug("Boing", 750, 3000000, 9990);
+            Schiff schiff1 = new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf);
+
+            //Aufruf der Belade()-Funktion mit verschiedenen Fahrzeugen
+            BeladeFahrzeuge(pkw1, flugzeug1);
+            BeladeFahrzeuge(flugzeug1, schiff1);
+            BeladeFahrzeuge(schiff1, pkw1);
+
+            //Ausgabe der Info() des Schiffes
+            Console.WriteLine("\n" + schiff1.Info());
+
+            //Aufruf der Entlade()-Methode
+            schiff1.Entlade();
+
+            #endregion
+        }
+
+        public static void BeladeFahrzeuge(Fahrzeug fz1, Fahrzeug fz2)
+        {
+            //Test, ob fz1 beladbar ist
+            if (fz1 is IBeladbar)
+            {
+                //Cast des Fahrzeuges in IBeladbar und Ausführung der Belade()-Methode
+                ((IBeladbar)fz1).Belade(fz2);
+            }
+            //Test, ob fz2 beladbar ist
+            else if (fz2 is IBeladbar)
+            {
+                //Cast des Fahrzeuges in IBeladbar mittels AS und Ausführung der Belade()-Methode
+                (fz2 as IBeladbar).Belade(fz1);
+            }
+            //Fehlermeldung
+            else
+                Console.WriteLine("Keines der Fahrzeuge kann ein Fahrzeug transportieren.");
         }
     }
 }

@@ -107,24 +107,35 @@ namespace OOP
 
             #endregion
 
+            #region Modul 10: Interfaces
 
-            Arbeitnehmer an = new Arbeitnehmer("Marketing", new Person("Otto", "Meier", new DateTime(2001, 4, 3)), "Anna", "Müller", new DateTime(2003, 4, 30));
-
+            //Instanziierung eines Beispiel-Objekts
+            Arbeitnehmer an = new Arbeitnehmer("Marketing", new Arbeitnehmer("CEO", null, "Otto", "Meier", new DateTime(2001, 4, 3)), "Anna", "Müller", new DateTime(2003, 4, 30));
+            //Betrachtung des Objekts als Objekt des Interfaces
             ILohn lohnerhaltendesObjekt = an;
-
-            an.Auszahlung();
+            //Zugriff auf Interface-Methode
             lohnerhaltendesObjekt.Auszahlung();
-
+            //Übergabe an Methode, welche ein Objekt des Interfaces erwartet
+            Gehaltserhöhung(lohnerhaltendesObjekt);
+            //Übergabe benötigt keinen Cast aus implementierender Klasse
             Gehaltserhöhung(an);
+
+            //Aufruf der Clone()-Funktion des IClonable-Interfaces
+            Arbeitnehmer kopierterAn = (Arbeitnehmer)an.Clone();
+            
+            #endregion
         }
 
+        //Bsp-Methode, welche ein Objekt vom Typ des Interfaces verlangt
         public static void Gehaltserhöhung(ILohn lohn)
         {
             lohn.Gehalt += 100;
 
-            if(lohn is Arbeitnehmer)
+            //Prüfung des Objekts auf Laufzeittyp
+            if (lohn is Arbeitnehmer)
             {
-                Arbeitnehmer an = lohn as Arbeitnehmer;
+                //Cast
+                Arbeitnehmer an = (Arbeitnehmer)lohn;
                 an.Essen();
             }
         }
