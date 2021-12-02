@@ -106,6 +106,27 @@ namespace OOP
             //person.Essen();
 
             #endregion
+
+
+            Arbeitnehmer an = new Arbeitnehmer("Marketing", new Person("Otto", "Meier", new DateTime(2001, 4, 3)), "Anna", "Müller", new DateTime(2003, 4, 30));
+
+            ILohn lohnerhaltendesObjekt = an;
+
+            an.Auszahlung();
+            lohnerhaltendesObjekt.Auszahlung();
+
+            Gehaltserhöhung(an);
+        }
+
+        public static void Gehaltserhöhung(ILohn lohn)
+        {
+            lohn.Gehalt += 100;
+
+            if(lohn is Arbeitnehmer)
+            {
+                Arbeitnehmer an = lohn as Arbeitnehmer;
+                an.Essen();
+            }
         }
     }
 }

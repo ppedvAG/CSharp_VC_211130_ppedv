@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace OOP
 {
     //Arbeitnehmer erbt mittels des :-Zeichens von der Person-Klasse und übernimmt somit alle Eigenschaften und Methoden von dieser.
-    class Arbeitnehmer : Person
+    class Arbeitnehmer : Person, ILohn, ICloneable
     {
         //Zusätzliche Arbeitnehmer-eigene Eigenschaften
         public string Abteilung { get; set; }
         public Person Chef { get; set; }
+        public int Gehalt { get; set; } = 3500;
 
         //Arbeitnehmer-Konstruktor, welcher per BASE-Stichwort den Konstruktor der Personklasse aufruft. Dieser erstellt dann eine Person, gibt diese
         ///an diesen Konstruktor zurück, welcher dann die zusätzlichen Eigenschaften einfügt
@@ -33,6 +34,19 @@ namespace OOP
         public override void Essen()
         {
             Console.WriteLine("Kantinenessen");
+        }
+
+        public void Auszahlung()
+        {
+            Console.WriteLine($"{this.Vorname} {this.Nachname} hat {this.Gehalt} von {this.Chef.Nachname} erhalten.");
+        }
+
+        public object Clone()
+        {
+            Arbeitnehmer an = (Arbeitnehmer)this.MemberwiseClone();
+            an.Chef = this.Chef;
+
+            return an;
         }
     }
 }
