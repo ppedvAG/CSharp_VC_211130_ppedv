@@ -28,5 +28,10 @@ namespace OOP
         {
             return base.ToString() + $" Der Chef heißt {this.Chef} und arbeitet in der Abteilung {this.Abteilung}.";
         }
+
+        public override void Essen()
+        {
+            Console.WriteLine("Kantinenessen");
+        }
     }
 }

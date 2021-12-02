@@ -52,27 +52,54 @@ namespace OOP
 
             #region Modul 08: Vererbung
 
-            //Instanziierung eines Objekts der vererbenden Klasse
-            Person chef = new Person("Anna", "Nass", new DateTime(1974, 4, 12));
-            //Instanziierung eines Objekts der abgeleiteten Klasse
-            Arbeitnehmer an = new Arbeitnehmer("Marketing", chef, "Rainer", "Zufall", new DateTime(1999, 5, 23));
+            ////Instanziierung eines Objekts der vererbenden Klasse
+            //Person chef = new Person("Anna", "Nass", new DateTime(1974, 4, 12));
+            ////Instanziierung eines Objekts der abgeleiteten Klasse
+            //Arbeitnehmer an = new Arbeitnehmer("Marketing", chef, "Rainer", "Zufall", new DateTime(1999, 5, 23));
 
-            //Aufruf von Properties und Methoden, welche aus der Mutterklasse stammen
-            Console.WriteLine(an.AlterInJahren);
-            an.KorrigiereGeburtsdatumUmEinJahr();
-            Console.WriteLine(an.AlterInJahren);
+            ////Aufruf von Properties und Methoden, welche aus der Mutterklasse stammen
+            //Console.WriteLine(an.AlterInJahren);
+            //an.KorrigiereGeburtsdatumUmEinJahr();
+            //Console.WriteLine(an.AlterInJahren);
 
-            //Ausgabe der (überschriebenen) ToString()-Methoden
-            Console.WriteLine(chef.ToString());
-            Console.WriteLine(an);
+            ////Ausgabe der (überschriebenen) ToString()-Methoden
+            //Console.WriteLine(chef.ToString());
+            //Console.WriteLine(an);
 
-            //Aufruf einer Property der abgeleiteten Klasse
-            Console.WriteLine(an.Abteilung);
+            ////Aufruf einer Property der abgeleiteten Klasse
+            //Console.WriteLine(an.Abteilung);
 
-            //Aufruf einer Property eines abhängigen Objekts
-            Console.WriteLine(an.Chef.AlterInJahren);
+            ////Aufruf einer Property eines abhängigen Objekts
+            //Console.WriteLine(an.Chef.AlterInJahren);
 
             #endregion
+
+
+            Person person;
+
+            Arbeitnehmer an = new Arbeitnehmer("Marketing", new Person("Anna", "Nass", new DateTime(1974, 4, 12)), "Rainer", "Zufall", new DateTime(1999, 5, 23));
+
+            person = (Person)an;
+
+            if(person.GetType() == typeof(Arbeitnehmer))
+            {
+                Arbeitnehmer an2 = (Arbeitnehmer)person;
+                Console.WriteLine(an2.Chef.Vorname);
+                Console.WriteLine("Person hat Arbeit");
+            }
+
+            if(person is Arbeitnehmer)
+            {
+                Arbeitnehmer an2 = (Arbeitnehmer)person;
+                an2 = person as Arbeitnehmer;
+
+                Console.WriteLine(an2.Chef.Vorname);
+                Console.WriteLine("Person hat Arbeit");
+            }
+
+            Console.WriteLine(person.ToString());
+
+            person.Essen();
         }
     }
 }

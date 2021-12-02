@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace OOP
 {
     //KLASSEN sind Vorlagen für Objekte. Sie bestimmen Eigenschaften und Funktionen dieser.
-    public class Person //zur Verwendung vgl. Program.cs
+    public abstract class Person //zur Verwendung vgl. Program.cs
     {
         #region Felder und Eigenschaften
         //FELDER (Membervariablen) sind die Variablen einzelner Objekte, welche die Zustände dieser Objekte definieren
@@ -101,5 +101,7 @@ namespace OOP
         {
             return $"{this.Vorname} {this.Nachname} ist {this.AlterInJahren} Jahre alt";
         }
+
+        public abstract void Essen();
     }
 }
