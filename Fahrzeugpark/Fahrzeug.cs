@@ -102,7 +102,7 @@ namespace Fahrzeugpark
         #region Lab 09: Polymorphismus
 
         //statisches Feld für Zufallsgenerator
-        private static Random generator = new Random();
+        protected static Random generator = new Random();
         //Methode zur zufälligen Generierung eines Fahrzeugs
         public static Fahrzeug GeneriereFahrzeug(string nameSuffix = "")
         {
@@ -110,7 +110,7 @@ namespace Fahrzeugpark
             {
                 //Instanziierung der jeweiligen spezifischen Fahrzeuge
                 case 1:
-                    return new PKW("Mercedes" + nameSuffix, 210, 23000, 5);
+                    return PKW.ErzeugeZufälligenPKW(nameSuffix);
                 case 2:
                     return new Schiff("Titanic" + nameSuffix, 40, 25000000, Schiff.SchiffsTreibstoff.Dampf);
                 default:

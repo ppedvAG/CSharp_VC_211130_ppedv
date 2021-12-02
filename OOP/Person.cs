@@ -53,8 +53,8 @@ namespace OOP
             AnzahlPersonen++;
         }
 
-        Es können mehrere Konstruktoren definiert werden, welche unterschiedliche Übergabeparameter haben(Überladung). Ein Konstruktor, der keine
-       Übergabeparameter hat, wird als Basiskonstruktor bezeichnet
+        //Es können mehrere Konstruktoren definiert werden, welche unterschiedliche Übergabeparameter haben(Überladung). Ein Konstruktor, der keine
+        //Übergabeparameter hat, wird als Basiskonstruktor bezeichnet
         public Person()
         {
 

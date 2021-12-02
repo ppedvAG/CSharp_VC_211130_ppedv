@@ -106,21 +106,68 @@ namespace Fahrzeugpark
 
             #region Lab 10: Interfaces
 
-            //Instanziierung von Bsp-Objekten
-            PKW pkw1 = new PKW("BMW", 250, 23000, 5);
-            Flugzeug flugzeug1 = new Flugzeug("Boing", 750, 3000000, 9990);
-            Schiff schiff1 = new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf);
+            ////Instanziierung von Bsp-Objekten
+            //PKW pkw1 = new PKW("BMW", 250, 23000, 5);
+            //Flugzeug flugzeug1 = new Flugzeug("Boing", 750, 3000000, 9990);
+            //Schiff schiff1 = new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf);
 
-            //Aufruf der Belade()-Funktion mit verschiedenen Fahrzeugen
-            BeladeFahrzeuge(pkw1, flugzeug1);
-            BeladeFahrzeuge(flugzeug1, schiff1);
-            BeladeFahrzeuge(schiff1, pkw1);
+            ////Aufruf der Belade()-Funktion mit verschiedenen Fahrzeugen
+            //BeladeFahrzeuge(pkw1, flugzeug1);
+            //BeladeFahrzeuge(flugzeug1, schiff1);
+            //BeladeFahrzeuge(schiff1, pkw1);
 
-            //Ausgabe der Info() des Schiffes
-            Console.WriteLine("\n" + schiff1.Info());
+            ////Ausgabe der Info() des Schiffes
+            //Console.WriteLine("\n" + schiff1.Info());
 
-            //Aufruf der Entlade()-Methode
-            schiff1.Entlade();
+            ////Aufruf der Entlade()-Methode
+            //schiff1.Entlade();
+
+            #endregion
+
+            #region Lab 11: generische Listen
+
+            //Deklaration der benötigten Variablen und und Initialisierung mit Instanzen der benötigten Objekte
+            Queue<Fahrzeug> fzQueue = new Queue<Fahrzeug>();
+            Stack<Fahrzeug> fzStack = new Stack<Fahrzeug>();
+            Dictionary<Fahrzeug, Fahrzeug> fzDict = new Dictionary<Fahrzeug, Fahrzeug>();
+            Random random = new Random();
+            //Deklaration und Initialisierung einer Variablen zur Bestimmung der Anzahl der Durchläufe 
+            int anzahlFahrzeuge = 10;
+
+            //Schleife zur zufälligen Befüllung von Queue und Stack
+            for (int i = 0; i < anzahlFahrzeuge; i++)
+            {
+                fzQueue.Enqueue(Fahrzeug.GeneriereFahrzeug($"_Q{i}"));
+                fzStack.Push(Fahrzeug.GeneriereFahrzeug($"_S{i}"));
+            }
+
+            for (int i = 0; i < anzahlFahrzeuge; i++)
+            {
+                //Prüfung, ob das Interface vorhanden ist (mittels Peek(), da die Objekte noch benötigt werden)...
+                if (fzQueue.Peek() is IBeladbar)
+                {
+                    //...wenn ja, dann Cast in das Interface und Ausführung der Belade()-Methode (mittels Peek())...
+                    ((IBeladbar)fzQueue.Peek()).Belade(fzStack.Peek());
+                    //...sowie Hinzufügen zum Dictionary (mittels Pop()/Dequeue(), um beim nächsten Durchlauf andere Objekte an den Spitzen zu haben)
+                    fzDict.Add(fzQueue.Dequeue(), fzStack.Pop());
+                }
+                else
+                {
+                    //... wenn nein, dann Löschung der obersten Objekte (mittels Pop()/Dequeue())
+                    fzQueue.Dequeue();
+                    fzStack.Pop();
+                }
+            }
+
+            //Programmpause
+            Console.ReadKey();
+            Console.WriteLine("\n----------LADELISTE----------");
+
+            //Schleife zur Ausgabe des Dictionaries
+            foreach (var item in fzDict)
+            {
+                Console.WriteLine($"'{item.Key.Name}' hat '{item.Value.Name}' geladen.");
+            }
 
             #endregion
         }
