@@ -37,35 +37,35 @@ Datum: 30.11.2021
 - [x] do-while-Schleife
 - [x] for-Schleife  
 - [x] foreach-Schleife  
-- [ ] Enums 
+- [x] Enums 
 
 
 ## M05 | Funktionen
-- [ ] Funktionen  
-- [ ] Modifier  
-- [ ] Parameter 
-- [ ] optionale Parameter 
-- [ ] params   
-- [ ] out  
-- [ ] Überladung 
+- [x] Funktionen  
+- [x] Modifier  
+- [x] Parameter 
+- [x] optionale Parameter 
+- [x] params   
+- [x] out  
+- [x] Überladung 
 
 
 ## M06 | OOP - NAMESPACES, KLASSEN, FELDER und KAPSELUNGEN
-- [ ] Namespaces 
-- [ ] Klassen  
-- [ ] Felder
-- [ ] Eigenschaften  
-- [ ] Kapselungen 
-- [ ] Konstruktoren 
-- [ ] Objekte 
+- [x] Namespaces 
+- [x] Klassen  
+- [x] Felder
+- [x] Eigenschaften  
+- [x] Kapselungen 
+- [x] Konstruktoren 
+- [x] Objekte 
 
 
 ## M07 | OOP - GARBAGE COLLECTION, STATISCHE MEMBER, WERTE und REFERENZEN
-- [ ] Destruktor 
-- [ ] Garbage Collection
-- [ ] Statische Member
-- [ ] Werte- und Referenztypen
-- [ ] ref 
+- [x] Destruktor 
+- [x] Garbage Collection
+- [x] Statische Member
+- [x] Werte- und Referenztypen
+- [x] ref 
 
 
 ## M08 | OOP - VERERBUNG und ZUGRIFFSMODIFIER
@@ -134,7 +134,3 @@ Datum: 30.11.2021
 - [ ] Indexer
 - [ ] Erweiterungsmethoden
 - [ ] LINQ
-- [ ] Timer
-
--Alternativ können hier je nach Zeit und Teilnehmerbedarf auch andere Themen (z.B. Deployment / Klassendiagramme) durchgenommen
-	oder evtl ein Abschlussprojekt durchgeführt werden (vgl. hierfür M016-(Alternativen)).
