@@ -54,10 +54,10 @@ namespace OOP
 
         //Es können mehrere Konstruktoren definiert werden, welche unterschiedliche Übergabeparameter haben (Überladung). Ein Konstruktor, der keine
         //Übergabeparameter hat, wird als Basiskonstruktor bezeichnet
-        public Person()
-        {
+        //public Person()
+        //{
 
-        }
+        //}
         #endregion
 
         #region Methoden
@@ -95,5 +95,10 @@ namespace OOP
         }
 
         #endregion
+
+        public override string ToString()
+        {
+            return $"{this.Vorname} {this.Nachname} ist {this.AlterInJahren} Jahre alt.";
+        }
     }
 }
