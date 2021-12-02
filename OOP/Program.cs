@@ -50,17 +50,29 @@ namespace OOP
 
             #endregion
 
+            #region Modul 08: Vererbung
+
+            //Instanziierung eines Objekts der vererbenden Klasse
             Person chef = new Person("Anna", "Nass", new DateTime(1974, 4, 12));
+            //Instanziierung eines Objekts der abgeleiteten Klasse
             Arbeitnehmer an = new Arbeitnehmer("Marketing", chef, "Rainer", "Zufall", new DateTime(1999, 5, 23));
 
+            //Aufruf von Properties und Methoden, welche aus der Mutterklasse stammen
             Console.WriteLine(an.AlterInJahren);
             an.KorrigiereGeburtsdatumUmEinJahr();
             Console.WriteLine(an.AlterInJahren);
 
+            //Ausgabe der (überschriebenen) ToString()-Methoden
             Console.WriteLine(chef.ToString());
             Console.WriteLine(an);
 
+            //Aufruf einer Property der abgeleiteten Klasse
+            Console.WriteLine(an.Abteilung);
 
+            //Aufruf einer Property eines abhängigen Objekts
+            Console.WriteLine(an.Chef.AlterInJahren);
+
+            #endregion
         }
     }
 }

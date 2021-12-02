@@ -13,17 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab03_Schaltjahrrechner_Min
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M04_Schleifen_Enums", "Schleifen_Enums\M04_Schleifen_Enums.csproj", "{8F6DA420-F852-43B6-83B0-07CAA7ECF120}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab04_Taschenrechner", "Taschenrechner\Lab04_Taschenrechner.csproj", "{31841DC1-446E-4D1E-AB3B-434A59DC6424}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab04_Taschenrechner", "Taschenrechner\Lab04_Taschenrechner.csproj", "{31841DC1-446E-4D1E-AB3B-434A59DC6424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M05_Funktionen", "Funktionen\M05_Funktionen.csproj", "{868615D0-CAA3-4DEC-8F15-33E6C9773383}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M05_Funktionen", "Funktionen\M05_Funktionen.csproj", "{868615D0-CAA3-4DEC-8F15-33E6C9773383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab05_Taschenrechner2", "Taschenrechner2\Lab05_Taschenrechner2.csproj", "{85D8978F-CFFB-4682-86A5-FD7FF9CC7F69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab05_Taschenrechner2", "Taschenrechner2\Lab05_Taschenrechner2.csproj", "{85D8978F-CFFB-4682-86A5-FD7FF9CC7F69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M06-07_OOP", "OOP\M06-07_OOP.csproj", "{FF6571DE-48AA-412E-9F41-6459530885E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M06-08_OOP", "OOP\M06-08_OOP.csproj", "{FF6571DE-48AA-412E-9F41-6459530885E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab06-07_Fahrzeugpark", "Fahrzeugpark\Lab06-07_Fahrzeugpark.csproj", "{A32A29FA-3012-4F5F-84D8-AF8A1478AF4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab06-08_Fahrzeugpark", "Fahrzeugpark\Lab06-08_Fahrzeugpark.csproj", "{A32A29FA-3012-4F5F-84D8-AF8A1478AF4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M07_Werte_Referenzen", "Werte_Referenzen\M07_Werte_Referenzen.csproj", "{0F32BB96-9056-42CE-8432-C3A3C75131FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M07_Werte_Referenzen", "Werte_Referenzen\M07_Werte_Referenzen.csproj", "{0F32BB96-9056-42CE-8432-C3A3C75131FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

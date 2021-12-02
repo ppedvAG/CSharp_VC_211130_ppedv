@@ -96,9 +96,10 @@ namespace OOP
 
         #endregion
 
+        //Mittels OVERRIDE können Methoden der Mutterklassen, welche mit VIRTUAL markiert sind, überschrieben werden. Bei Aufruf wird die neue Methode ausgeführt.
         public override string ToString()
         {
-            return $"{this.Vorname} {this.Nachname} ist {this.AlterInJahren} Jahre alt.";
+            return $"{this.Vorname} {this.Nachname} ist {this.AlterInJahren} Jahre alt";
         }
     }
 }
