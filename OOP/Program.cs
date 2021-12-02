@@ -74,32 +74,38 @@ namespace OOP
 
             #endregion
 
+            #region Modul 09: Polymorphismus
 
-            Person person;
+            ////Deklaration einer Bsp-Variablen
+            //Person person;
+            ////Instanziierung eines Objekts der abgeleiteten Klasse
+            //Arbeitnehmer an = new Arbeitnehmer("Anna", "Meier", new DateTime(1997, 5, 6), new Arbeitnehmer("Hugo", "Schmidt", new DateTime(1988, 4, 23), null, "CEO"), "Marketing");
 
-            Arbeitnehmer an = new Arbeitnehmer("Marketing", new Person("Anna", "Nass", new DateTime(1974, 4, 12)), "Rainer", "Zufall", new DateTime(1999, 5, 23));
+            ////Zuweisung des abgeleiteten Objekts zu Variable der Mutterklasse
+            //person = (Person)an;
 
-            person = (Person)an;
+            ////Tests des Laufzeittyps (des beinhalteten Objekts)
+            //if (person.GetType() == typeof(Arbeitnehmer))
+            //    Console.WriteLine("Person hat Arbeit");
 
-            if(person.GetType() == typeof(Arbeitnehmer))
-            {
-                Arbeitnehmer an2 = (Arbeitnehmer)person;
-                Console.WriteLine(an2.Chef.Vorname);
-                Console.WriteLine("Person hat Arbeit");
-            }
+            //if (person is Arbeitnehmer)
+            //    Console.WriteLine("Person hat Arbeit");
 
-            if(person is Arbeitnehmer)
-            {
-                Arbeitnehmer an2 = (Arbeitnehmer)person;
-                an2 = person as Arbeitnehmer;
+            ////überschriebene Methoden werden trotzdem ausgeführt
+            //Console.WriteLine(person.ToString());
 
-                Console.WriteLine(an2.Chef.Vorname);
-                Console.WriteLine("Person hat Arbeit");
-            }
+            //if (person is Arbeitnehmer)
+            //{
+            //    //Rückcast des abgeleiteten Objekts aus Mutterklassevariablen in abgeleitete Variable
+            //    Arbeitnehmer an2 = (Arbeitnehmer)person;
+            //    //Alternativer Cast
+            //    Arbeitnehmer an2 = person as Arbeitnehmer;
+            //}
 
-            Console.WriteLine(person.ToString());
+            ////Aufruf der abstrakten Methode
+            //person.Essen();
 
-            person.Essen();
+            #endregion
         }
     }
 }

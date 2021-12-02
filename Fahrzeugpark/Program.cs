@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace Fahrzeugpark
 {
-    
-
     class Program
     {
         static void Main(string[] args)
@@ -60,15 +58,49 @@ namespace Fahrzeugpark
 
             #region Lab 08: Vererbung
 
-            //Instanziierung verschiedener Fahrzeuge
-            PKW pkw1 = new PKW("Mercedes", 210, 23000, 5);
-            Schiff schiff1 = new Schiff("Titanic", 40, 25000000, Schiff.SchiffsTreibstoff.Dampf);
-            Flugzeug flugzeug1 = new Flugzeug("Boing", 350, 90000000, 9800);
+            ////Instanziierung verschiedener Fahrzeuge
+            //PKW pkw1 = new PKW("Mercedes", 210, 23000, 5);
+            //Schiff schiff1 = new Schiff("Titanic", 40, 25000000, Schiff.SchiffsTreibstoff.Dampf);
+            //Flugzeug flugzeug1 = new Flugzeug("Boing", 350, 90000000, 9800);
 
-            //Ausgabe der verschiedenen Info()-Methoden
-            Console.WriteLine(pkw1.Info());
-            Console.WriteLine(schiff1.Info());
-            Console.WriteLine(flugzeug1.Info());
+            ////Ausgabe der verschiedenen Info()-Methoden
+            //Console.WriteLine(pkw1.Info());
+            //Console.WriteLine(schiff1.Info());
+            //Console.WriteLine(flugzeug1.Info());
+
+            #endregion
+
+            #region Lab 09: Polymorphismus
+
+            //Arraydeklarierung
+            Fahrzeug[] fahrzeuge = new Fahrzeug[10];
+
+            //Schleife über das Array zur Befüllung
+            for (int i = 0; i < fahrzeuge.Length; i++)
+            {
+                //Aufruf der Zufallsmethode aus der Fahrzeug-Klasse
+                fahrzeuge[i] = Fahrzeug.GeneriereFahrzeug($"_{i}");
+            }
+
+            //Deklarierung/Initialisierung der Zählvariablen
+            int pkws = 0, schiffe = 0, flugzeuge = 0;
+
+            //Schleife über das Array zur Identifizierung der Objekttypen
+            foreach (Fahrzeug item in fahrzeuge)
+            {
+                //Ausgabe der ToString()-Methoden
+                Console.WriteLine(item);
+                //Prüfung des Objektstyps und Hochzählen der entsprechenden Variablen
+                if (item == null) Console.WriteLine("Kein Objekt vorhanden");
+                else if (item is PKW) pkws++;
+                else if (item is Schiff) schiffe++;
+                else flugzeuge++;
+            }
+
+            //Ausgabe
+            Console.WriteLine($"Es wurden {pkws} PKW(s), {flugzeuge} Flugzeug(e) und {schiffe} Schiff(e) produziert.");
+            //Ausführung der abstrakten Methode
+            fahrzeuge[2].Hupen();
 
             #endregion
         }

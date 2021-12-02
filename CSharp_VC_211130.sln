@@ -19,9 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M05_Funktionen", "Funktione
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab05_Taschenrechner2", "Taschenrechner2\Lab05_Taschenrechner2.csproj", "{85D8978F-CFFB-4682-86A5-FD7FF9CC7F69}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M06-08_OOP", "OOP\M06-08_OOP.csproj", "{FF6571DE-48AA-412E-9F41-6459530885E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M06-09_OOP", "OOP\M06-09_OOP.csproj", "{FF6571DE-48AA-412E-9F41-6459530885E7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab06-08_Fahrzeugpark", "Fahrzeugpark\Lab06-08_Fahrzeugpark.csproj", "{A32A29FA-3012-4F5F-84D8-AF8A1478AF4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab06-09_Fahrzeugpark", "Fahrzeugpark\Lab06-09_Fahrzeugpark.csproj", "{A32A29FA-3012-4F5F-84D8-AF8A1478AF4F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M07_Werte_Referenzen", "Werte_Referenzen\M07_Werte_Referenzen.csproj", "{0F32BB96-9056-42CE-8432-C3A3C75131FD}"
 EndProject

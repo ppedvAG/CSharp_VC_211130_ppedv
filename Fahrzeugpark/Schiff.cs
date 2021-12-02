@@ -26,5 +26,11 @@ namespace Fahrzeugpark
         {
             return "Das Schiff " + base.Info() + $" Es fährt mit {this.Treibstoff}.";
         }
+
+        //Durch Mutterklasse verlangter Member (da dort als abstract gesetzt)
+        public override void Hupen()
+        {
+            Console.WriteLine($"{this.Name}: 'Tröööt'");
+        }
     }
 }

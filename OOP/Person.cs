@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace OOP
 {
     //KLASSEN sind Vorlagen für Objekte. Sie bestimmen Eigenschaften und Funktionen dieser.
+    //ABSTRACT definiert eine Klasse als abstrakt. D.h. von dieser Klasse können keine Objekte mehr instanziiert werden, sie dient nur noch als Mutterklasse
     public abstract class Person //zur Verwendung vgl. Program.cs
     {
         #region Felder und Eigenschaften
@@ -102,6 +103,8 @@ namespace OOP
             return $"{this.Vorname} {this.Nachname} ist {this.AlterInJahren} Jahre alt";
         }
 
+        //Abstrakte Methoden dürfen nur in abstrakten Klassen existieren und definieren nur
+        ///eine Signatur. Die erbenden Klassen werden gezwungen eine Implementierung vorzunehmen
         public abstract void Essen();
     }
 }
