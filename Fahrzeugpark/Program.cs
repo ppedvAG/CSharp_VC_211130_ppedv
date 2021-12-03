@@ -130,9 +130,9 @@ namespace Fahrzeugpark
             Queue<Fahrzeug> fzQueue = new Queue<Fahrzeug>();
             Stack<Fahrzeug> fzStack = new Stack<Fahrzeug>();
             Dictionary<Fahrzeug, Fahrzeug> fzDict = new Dictionary<Fahrzeug, Fahrzeug>();
-            Random random = new Random();
+            
             //Deklaration und Initialisierung einer Variablen zur Bestimmung der Anzahl der Durchläufe 
-            int anzahlFahrzeuge = 10;
+            int anzahlFahrzeuge = 10000;
 
             //Schleife zur zufälligen Befüllung von Queue und Stack
             for (int i = 0; i < anzahlFahrzeuge; i++)
