@@ -125,7 +125,21 @@ namespace Fahrzeugpark
         public override string ToString()
         {
             return this.GetType().Name + ": " + this.Name;
-        } 
+        }
+
+        #endregion
+
+        #region Operatoren
+        //Für Klassen können die bekannten Operatoren mittels des OPERATOR-Stichworts neu definiert werden.
+        //Hier gilt ein Fahrzeug als größer, wenn seine MaxGeschwindigkeit größer ist
+        public static bool operator >(Fahrzeug fz1, Fahrzeug fz2)
+        {
+            return fz1.MaxGeschwindigkeit > fz2.MaxGeschwindigkeit;
+        }
+        public static bool operator <(Fahrzeug fz1, Fahrzeug fz2)
+        {
+            return fz1.MaxGeschwindigkeit < fz2.MaxGeschwindigkeit;
+        }
 
         #endregion
     }

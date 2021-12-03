@@ -126,50 +126,72 @@ namespace Fahrzeugpark
 
             #region Lab 11: generische Listen
 
-            //Deklaration der benötigten Variablen und und Initialisierung mit Instanzen der benötigten Objekte
-            Queue<Fahrzeug> fzQueue = new Queue<Fahrzeug>();
-            Stack<Fahrzeug> fzStack = new Stack<Fahrzeug>();
-            Dictionary<Fahrzeug, Fahrzeug> fzDict = new Dictionary<Fahrzeug, Fahrzeug>();
-            
-            //Deklaration und Initialisierung einer Variablen zur Bestimmung der Anzahl der Durchläufe 
-            int anzahlFahrzeuge = 10000;
+            ////Deklaration der benötigten Variablen und und Initialisierung mit Instanzen der benötigten Objekte
+            //Queue<Fahrzeug> fzQueue = new Queue<Fahrzeug>();
+            //Stack<Fahrzeug> fzStack = new Stack<Fahrzeug>();
+            //Dictionary<Fahrzeug, Fahrzeug> fzDict = new Dictionary<Fahrzeug, Fahrzeug>();
 
-            //Schleife zur zufälligen Befüllung von Queue und Stack
-            for (int i = 0; i < anzahlFahrzeuge; i++)
-            {
-                fzQueue.Enqueue(Fahrzeug.GeneriereFahrzeug($"_Q{i}"));
-                fzStack.Push(Fahrzeug.GeneriereFahrzeug($"_S{i}"));
-            }
+            ////Deklaration und Initialisierung einer Variablen zur Bestimmung der Anzahl der Durchläufe 
+            //int anzahlFahrzeuge = 10000;
 
-            for (int i = 0; i < anzahlFahrzeuge; i++)
-            {
-                //Prüfung, ob das Interface vorhanden ist (mittels Peek(), da die Objekte noch benötigt werden)...
-                if (fzQueue.Peek() is IBeladbar)
-                {
-                    //...wenn ja, dann Cast in das Interface und Ausführung der Belade()-Methode (mittels Peek())...
-                    ((IBeladbar)fzQueue.Peek()).Belade(fzStack.Peek());
-                    //...sowie Hinzufügen zum Dictionary (mittels Pop()/Dequeue(), um beim nächsten Durchlauf andere Objekte an den Spitzen zu haben)
-                    fzDict.Add(fzQueue.Dequeue(), fzStack.Pop());
-                }
-                else
-                {
-                    //... wenn nein, dann Löschung der obersten Objekte (mittels Pop()/Dequeue())
-                    fzQueue.Dequeue();
-                    fzStack.Pop();
-                }
-            }
+            ////Schleife zur zufälligen Befüllung von Queue und Stack
+            //for (int i = 0; i < anzahlFahrzeuge; i++)
+            //{
+            //    fzQueue.Enqueue(Fahrzeug.GeneriereFahrzeug($"_Q{i}"));
+            //    fzStack.Push(Fahrzeug.GeneriereFahrzeug($"_S{i}"));
+            //}
 
-            //Programmpause
-            Console.ReadKey();
-            Console.WriteLine("\n----------LADELISTE----------");
+            //for (int i = 0; i < anzahlFahrzeuge; i++)
+            //{
+            //    //Prüfung, ob das Interface vorhanden ist (mittels Peek(), da die Objekte noch benötigt werden)...
+            //    if (fzQueue.Peek() is IBeladbar)
+            //    {
+            //        //...wenn ja, dann Cast in das Interface und Ausführung der Belade()-Methode (mittels Peek())...
+            //        ((IBeladbar)fzQueue.Peek()).Belade(fzStack.Peek());
+            //        //...sowie Hinzufügen zum Dictionary (mittels Pop()/Dequeue(), um beim nächsten Durchlauf andere Objekte an den Spitzen zu haben)
+            //        fzDict.Add(fzQueue.Dequeue(), fzStack.Pop());
+            //    }
+            //    else
+            //    {
+            //        //... wenn nein, dann Löschung der obersten Objekte (mittels Pop()/Dequeue())
+            //        fzQueue.Dequeue();
+            //        fzStack.Pop();
+            //    }
+            //}
 
-            //Schleife zur Ausgabe des Dictionaries
-            foreach (var item in fzDict)
-            {
-                Console.WriteLine($"'{item.Key.Name}' hat '{item.Value.Name}' geladen.");
-            }
+            ////Programmpause
+            //Console.ReadKey();
+            //Console.WriteLine("\n----------LADELISTE----------");
+
+            ////Schleife zur Ausgabe des Dictionaries
+            //foreach (var item in fzDict)
+            //{
+            //    Console.WriteLine($"'{item.Key.Name}' hat '{item.Value.Name}' geladen.");
+            //}
 
             #endregion
+
+            //Bsp-Objekte
+            PKW pkw1 = PKW.ErzeugeZufälligenPKW("");
+            PKW pkw2 = PKW.ErzeugeZufälligenPKW("");
+            Console.WriteLine(pkw1.Info());
+            Console.WriteLine(pkw2.Info());
+
+            //Bsp-Anwendung von überladenen Operatoren (vgl. Fahrzeug-Klasse)
+            Console.WriteLine(pkw1 > pkw2);
+
+            //Bsp-Anwendung für IEnumerable (vgl. Flugzeug-Klasse)
+            Flugzeug flugzeug = new Flugzeug($"Boing", 350, 90000000, 9800);
+            foreach (var passagiere in flugzeug)
+            {
+                Console.WriteLine(passagiere);
+            }
+            //Bsp-Anwendung einer Indexer-Property (vgl. Flugzeug-Klasse)
+            Console.WriteLine(flugzeug[2]);
+
+            //Bsp-Anwendung einer Erweiterungmethode (s.u.)
+            Random random = new Random();
+            int erg = random.NextInclusive(1, 5);
         }
 
         public static void BeladeFahrzeuge(Fahrzeug fz1, Fahrzeug fz2)
@@ -189,6 +211,16 @@ namespace Fahrzeugpark
             //Fehlermeldung
             else
                 Console.WriteLine("Keines der Fahrzeuge kann ein Fahrzeug transportieren.");
+        }
+    }
+
+    public static class Hilfsmethoden
+    {
+        //Mittels des THIS-Stichworts in der Parameterübergabe kann eine Methode als Erweiterungsmethode einer Klasse definiert
+        //werden. Diese muss in einer statischen Klasse beschrieben werden und wird dann als Teil der zugeordneten Klasse betrachtet.
+        public static int NextInclusive(this Random random, int untergrenze, int obergrenze)
+        {
+            return random.Next(untergrenze, obergrenze + 1);
         }
     }
 }

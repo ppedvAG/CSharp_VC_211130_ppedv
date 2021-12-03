@@ -29,15 +29,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M11_GenerischeListen", "Gen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M12_ExceptionHandling", "ExceptionHandling\M12_ExceptionHandling.csproj", "{BC93D09E-812E-40F2-840D-5E93AE8CE7C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab12_ExceptionHandling", "Lab12_ExceptionHandling\Lab12_ExceptionHandling.csproj", "{BBA02E4A-FEF0-4B52-996B-FFC5D7AD601F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab12_ExceptionHandling", "Lab12_ExceptionHandling\Lab12_ExceptionHandling.csproj", "{BBA02E4A-FEF0-4B52-996B-FFC5D7AD601F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M12_UnitTestFahrzeugpark", "UnitTestFahrzeugpark\M12_UnitTestFahrzeugpark.csproj", "{D0EDF7FE-5893-4CC2-BBF6-0783A77ED661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M12_UnitTestFahrzeugpark", "UnitTestFahrzeugpark\M12_UnitTestFahrzeugpark.csproj", "{D0EDF7FE-5893-4CC2-BBF6-0783A77ED661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M13_Delegates", "Delegates\M13_Delegates.csproj", "{E451CBBF-4715-435E-8CB2-3967B5F8E9A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M13_Delegates", "Delegates\M13_Delegates.csproj", "{E451CBBF-4715-435E-8CB2-3967B5F8E9A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M14_WinFormsBsp", "WInFormsBsp\M14_WinFormsBsp.csproj", "{F2F3ABF1-9EAD-411C-A223-124D40A5F8E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M14_WinFormsBsp", "WInFormsBsp\M14_WinFormsBsp.csproj", "{F2F3ABF1-9EAD-411C-A223-124D40A5F8E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab14_FahrzeugGUI", "FahrzuegGUI\Lab14_FahrzeugGUI.csproj", "{D879C3CE-E172-46CB-A312-6F1DA9169AF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab14-15_FahrzeugGUI", "FahrzuegGUI\Lab14-15_FahrzeugGUI.csproj", "{D879C3CE-E172-46CB-A312-6F1DA9169AF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M15_Dateizugriff", "Dateizugriff\M15_Dateizugriff.csproj", "{EBB94C87-9877-4B4D-B432-9482B2D6B21F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{D879C3CE-E172-46CB-A312-6F1DA9169AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D879C3CE-E172-46CB-A312-6F1DA9169AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D879C3CE-E172-46CB-A312-6F1DA9169AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB94C87-9877-4B4D-B432-9482B2D6B21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB94C87-9877-4B4D-B432-9482B2D6B21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB94C87-9877-4B4D-B432-9482B2D6B21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB94C87-9877-4B4D-B432-9482B2D6B21F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

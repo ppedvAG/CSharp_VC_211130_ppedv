@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fahrzeugpark\Lab06-10_Fahrzeugpark.csproj" />
+    <ProjectReference Include="..\Fahrzeugpark\Lab06-11_Fahrzeugpark.csproj" />
   </ItemGroup>
 
 </Project>

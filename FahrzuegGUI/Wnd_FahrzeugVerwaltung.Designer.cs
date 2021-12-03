@@ -37,6 +37,8 @@ namespace FahrzeugGUI
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MeI_Beenden = new System.Windows.Forms.ToolStripMenuItem();
+            this.Btn_LadeFz = new System.Windows.Forms.Button();
+            this.Btn_SpeichereFz = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,11 +115,33 @@ namespace FahrzeugGUI
             this.MeI_Beenden.Text = "Beenden";
             this.MeI_Beenden.Click += new System.EventHandler(this.MeI_Beenden_Click);
             // 
+            // Btn_LadeFz
+            // 
+            this.Btn_LadeFz.Location = new System.Drawing.Point(325, 125);
+            this.Btn_LadeFz.Name = "Btn_LadeFz";
+            this.Btn_LadeFz.Size = new System.Drawing.Size(157, 38);
+            this.Btn_LadeFz.TabIndex = 9;
+            this.Btn_LadeFz.Text = "Lade Fahrzeuge";
+            this.Btn_LadeFz.UseVisualStyleBackColor = true;
+            this.Btn_LadeFz.Click += new System.EventHandler(this.Btn_LadeFz_Click);
+            // 
+            // Btn_SpeichereFz
+            // 
+            this.Btn_SpeichereFz.Location = new System.Drawing.Point(488, 125);
+            this.Btn_SpeichereFz.Name = "Btn_SpeichereFz";
+            this.Btn_SpeichereFz.Size = new System.Drawing.Size(157, 38);
+            this.Btn_SpeichereFz.TabIndex = 10;
+            this.Btn_SpeichereFz.Text = "Speichere Fahrzeuge";
+            this.Btn_SpeichereFz.UseVisualStyleBackColor = true;
+            this.Btn_SpeichereFz.Click += new System.EventHandler(this.Btn_SpeicherFz_Click);
+            // 
             // Wnd_FahrzeugVerwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 407);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Btn_SpeichereFz);
+            this.Controls.Add(this.Btn_LadeFz);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.Lbl_Info);
             this.Controls.Add(this.Btn_Löschen);
@@ -143,6 +167,8 @@ namespace FahrzeugGUI
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MeI_Beenden;
+        private System.Windows.Forms.Button Btn_LadeFz;
+        private System.Windows.Forms.Button Btn_SpeichereFz;
     }
 }
 
